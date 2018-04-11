@@ -133,12 +133,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\GameManager.cpp" />
     <ClCompile Include="..\..\..\src\glad.c" />
     <ClCompile Include="..\..\..\src\main.cpp" />
     <ClCompile Include="..\..\..\src\Shader.cpp" />
     <ClCompile Include="..\..\..\src\Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\GameManager.h" />
     <ClInclude Include="..\..\..\src\Shader.h" />
     <ClInclude Include="..\..\..\src\stb_image.h" />
     <ClInclude Include="..\..\..\src\Tools.h" />

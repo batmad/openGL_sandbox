@@ -115,17 +115,26 @@ void GameManager::init()
 
 void GameManager::draw()
 {
-	glm::mat4 trans;
-	trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-	trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-	unsigned int transformLoc = glGetUniformLocation(shader->ID, "transform");
-	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-	shader->use();
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, texture2);
+
+	glm::mat4 trans;
+	trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+	trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+	unsigned int transformLoc = glGetUniformLocation(shader->ID, "transform");
+	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+	
 	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	trans = glm::mat4();
+	trans = glm::translate(trans, glm::vec3(-0.5f, 0.5f, 0.0f));
+	float scaleAmount = sin(glfwGetTime());
+	trans = glm::scale(trans, glm::vec3(scaleAmount, scaleAmount, scaleAmount));
+	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, &trans[0][0]);
+
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

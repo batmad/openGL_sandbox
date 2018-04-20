@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Tutorials">
+      <UniqueIdentifier>{2bea787a-a198-40b5-884e-2294457a936c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\glad.c">
@@ -30,6 +33,9 @@
     <ClCompile Include="..\..\..\src\GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Tutorials\Tutorial1.cpp">
+      <Filter>Tutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Shader.h">
@@ -43,6 +49,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\GameManager.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Tutorials\TutorialBase.h">
+      <Filter>Tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Tutorials\Tutorial1.h">
+      <Filter>Tutorials</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

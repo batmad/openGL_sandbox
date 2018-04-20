@@ -2,6 +2,7 @@
 
 struct GLFWwindow;
 class Shader;
+class TutorialBase;
 class GameManager
 {
 public:
@@ -13,11 +14,5 @@ public:
 	void onKeydown(GLFWwindow* aWindow);
 
 private:
-	float mix;
-	Shader* shader;
-	unsigned int VAO;
-	unsigned int VBO;
-	unsigned int EBO;
-	unsigned int texture1;
-	unsigned int texture2;
+	TutorialBase* tutorial;
 };

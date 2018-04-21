@@ -10,7 +10,7 @@
 
 Tutorial1::Tutorial1()
 {
-	shader = new Shader("shader.vs", "shader.fs");
+	shader = new Shader("shaders/shader1.vs", "shaders/shader1.fs");
 }
 
 Tutorial1::~Tutorial1()

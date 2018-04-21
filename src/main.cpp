@@ -38,7 +38,9 @@ int main()
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
-	
+
+	glEnable(GL_DEPTH_TEST);
+
 	gm = std::make_unique<GameManager>();
 	gm->init();
 		
@@ -46,7 +48,7 @@ int main()
 	{	
 		processInput(window);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);		
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		gm->update();
 		gm->draw();

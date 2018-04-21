@@ -3,11 +3,12 @@
 
 #include "TutorialBase.h"
 #include "Tutorial1.h"
+#include "Tutorial2.h"
 
 
 GameManager::GameManager()
 {
-	tutorial = new Tutorial1();
+	tutorial = new Tutorial2();
 }
 
 GameManager::~GameManager()

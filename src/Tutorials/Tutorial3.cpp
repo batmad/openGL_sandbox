@@ -111,8 +111,8 @@ void Tutorial3::draw()
 	{
 		glm::mat4 model;
 		model = glm::translate(model, cubePositions[i]);
-		float angle = 20.0f * i + 5.0f;
-		model = glm::rotate(model, (float)glfwGetTime() * glm::radians(angle), glm::vec3(1.0f, 0.4f, 0.5f));
+		float tAngle = angle +  20.0f * i + 5.0f;
+		model = glm::rotate(model, glm::radians(tAngle), glm::vec3(1.0f, 0.4f, 0.5f));
 		shader->setMat4("model", model);
 
 		glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -121,9 +121,17 @@ void Tutorial3::draw()
 }
 
 void Tutorial3::update()
-{
+{	
 }
 
 void Tutorial3::onKeydown(GLFWwindow * aWindow)
 {
+	if (glfwGetKey(aWindow, GLFW_KEY_LEFT) == GLFW_PRESS)
+	{
+		angle += 1.0f;
+	}
+	else if (glfwGetKey(aWindow, GLFW_KEY_RIGHT) == GLFW_PRESS)
+	{
+		angle -= 1.0f;
+	}
 }

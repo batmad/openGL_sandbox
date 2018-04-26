@@ -81,13 +81,11 @@ void Tutorial3::init()
 
 	glm::mat4 view;
 	view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-	int viewLoc = glGetUniformLocation(shader->ID, "view");
-	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+	shader->setMat4("view", view);
 
 	glm::mat4 projection;
 	projection = glm::perspective(glm::radians(45.0f), 16.0f / 9.0f, 0.1f, 100.0f);
-	int projectionLoc = glGetUniformLocation(shader->ID, "projection");
-	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+	shader->setMat4("projection", projection);
 }
 
 void Tutorial3::draw()

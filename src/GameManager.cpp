@@ -5,11 +5,12 @@
 #include "Tutorial1.h"
 #include "Tutorial2.h"
 #include "Tutorial3.h"
+#include "Tutorial4.h"
 
 
 GameManager::GameManager()
 {
-	tutorial = new Tutorial3();
+	tutorial = new Tutorial4();
 }
 
 GameManager::~GameManager()

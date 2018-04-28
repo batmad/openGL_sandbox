@@ -17,6 +17,8 @@ Tutorial4::~Tutorial4()
 void Tutorial4::init()
 {
 	Tools::loadImage("container.jpg", texture);
+	shader->use();
+	shader->setInt("ourTexture", 0);
 
 	float vertices[] = {
 		-0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
@@ -87,6 +89,7 @@ void Tutorial4::init()
 
 void Tutorial4::draw()
 {
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE, texture);
 	glBindVertexArray(VAO);
 	shader->use();

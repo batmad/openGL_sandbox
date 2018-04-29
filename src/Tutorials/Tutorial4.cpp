@@ -113,7 +113,28 @@ void Tutorial4::draw()
 	glm::mat4 view;
 	view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 	shader->setMat4("view", view);
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+
+	glm::vec3 cubePositions[] =
+	{
+		glm::vec3(0.0f, 0.0f, 0.0f),
+		glm::vec3(2.0f, -5.0f, -15.0f),
+		glm::vec3(-1.5f, -2.2f, -2.5f),
+		glm::vec3(0.5f, 2.2f, -4.5f),
+		glm::vec3(1.5f, -1.0f, -12.5f),
+		glm::vec3(1.5f, 1.0f, -1.5f)
+	};
+
+	for (size_t i = 0; i < 6; i++)
+	{
+		glm::mat4 model;
+		model = glm::translate(model, cubePositions[i]);
+		model = glm::rotate(model, glm::radians(45.0f + 20.0f * i + 5.0f), glm::vec3(1.0f, 0.4f, 0.5f));
+		shader->setMat4("model", model);
+
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+	}
+
+
 	
 }
 

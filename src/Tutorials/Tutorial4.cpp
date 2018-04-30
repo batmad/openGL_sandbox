@@ -99,6 +99,9 @@ void Tutorial4::init()
 	model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 0.4f, 0.5f));
 	shader->setMat4("model", model);
 	
+	cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+	cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+	cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 }
 
 void Tutorial4::draw()
@@ -107,11 +110,9 @@ void Tutorial4::draw()
 	glBindTexture(GL_TEXTURE, texture);
 	glBindVertexArray(VAO);
 	shader->use();
-	GLfloat radius = 10.0f;
-	GLfloat camX = sin(glfwGetTime()) * radius;
-	GLfloat camZ = cos(glfwGetTime()) * radius;
+	
 	glm::mat4 view;
-	view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+	view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 	shader->setMat4("view", view);
 
 	glm::vec3 cubePositions[] =
@@ -132,10 +133,7 @@ void Tutorial4::draw()
 		shader->setMat4("model", model);
 
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-	}
-
-
-	
+	}	
 }
 
 void Tutorial4::update()
@@ -145,5 +143,21 @@ void Tutorial4::update()
 
 void Tutorial4::onKeydown(GLFWwindow * aWindow)
 {
-
+	GLfloat cameraSpeed = 0.05f;
+	if (glfwGetKey(aWindow, GLFW_KEY_W) == GLFW_PRESS)
+	{
+		cameraPos += cameraSpeed * cameraFront;
+	}
+	else if (glfwGetKey(aWindow, GLFW_KEY_S) == GLFW_PRESS)
+	{
+		cameraPos -= cameraSpeed * cameraFront;
+	}
+	else if (glfwGetKey(aWindow, GLFW_KEY_A) == GLFW_PRESS)
+	{
+		cameraPos -= cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
+	}
+	else if (glfwGetKey(aWindow, GLFW_KEY_D) == GLFW_PRESS)
+	{
+		cameraPos += cameraSpeed * glm::normalize(glm::cross(cameraFront, cameraUp));
+	}
 }

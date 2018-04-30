@@ -17,4 +17,7 @@ private:
 	unsigned int VAO;
 	unsigned int VBO;
 	unsigned int texture;
+	glm::vec3 cameraPos;
+	glm::vec3 cameraFront;
+	glm::vec3 cameraUp;
 };

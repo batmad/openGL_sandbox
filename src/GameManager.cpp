@@ -6,11 +6,12 @@
 #include "Tutorial2.h"
 #include "Tutorial3.h"
 #include "Tutorial4.h"
+#include "Tutorial_GL_REPEAT.h"
 
 
 GameManager::GameManager()
 {
-	tutorial = new Tutorial4();
+	tutorial = new Tutorial_GL_REPEAT();
 }
 
 GameManager::~GameManager()
@@ -30,7 +31,7 @@ void GameManager::draw()
 
 void GameManager::update()
 {
-	tutorial->draw();
+	tutorial->update();
 }
 
 void GameManager::onKeydown(GLFWwindow * aWindow)

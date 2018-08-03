@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\..\src\Tutorials\Tutorial4.cpp">
       <Filter>Tutorials</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Tutorials\Tutorial_GL_REPEAT.cpp">
+      <Filter>Tutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Shader.h">
@@ -72,6 +75,9 @@
       <Filter>Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Tutorials\Tutorial4.h">
+      <Filter>Tutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Tutorials\Tutorial_GL_REPEAT.h">
       <Filter>Tutorials</Filter>
     </ClInclude>
   </ItemGroup>

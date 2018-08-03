@@ -146,6 +146,7 @@
     <ClCompile Include="..\..\..\src\Tutorials\Tutorial2.cpp" />
     <ClCompile Include="..\..\..\src\Tutorials\Tutorial3.cpp" />
     <ClCompile Include="..\..\..\src\Tutorials\Tutorial4.cpp" />
+    <ClCompile Include="..\..\..\src\Tutorials\Tutorial_GL_REPEAT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\GameManager.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="..\..\..\src\Tutorials\Tutorial3.h" />
     <ClInclude Include="..\..\..\src\Tutorials\Tutorial4.h" />
     <ClInclude Include="..\..\..\src\Tutorials\TutorialBase.h" />
+    <ClInclude Include="..\..\..\src\Tutorials\Tutorial_GL_REPEAT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

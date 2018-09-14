@@ -7,11 +7,12 @@
 #include "Tutorial3.h"
 #include "Tutorial4.h"
 #include "Tutorial_GL_REPEAT.h"
+#include "Tutorial_book_0.h"
 
 
 GameManager::GameManager()
 {
-	tutorial = new Tutorial_GL_REPEAT();
+	tutorial = new Tutorial_book_0();
 }
 
 GameManager::~GameManager()
